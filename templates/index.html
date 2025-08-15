@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WhatsApp Chat Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="container main">
+      <!-- Upload Page -->
+      <section id="upload-page" class="page active">
+        <div class="hero">
+          <h1 class="hero-title">Chat Stats</h1>
+          </div>
+        <form id="upload-form" class="upload-form">
+          <input id="file-input" name="file" type="file" accept=".txt" hidden required />
+          <button type="button" id="select-file" class="button button-outline">File (.txt)</button>
+          <button type="submit" class="button" id="analyze-btn" disabled>Analyze</button>
+        </form>
+        <div class="file-info"><span id="file-name" class="file-name" aria-live="polite"></span></div>
+        <div id="error" class="error" role="alert" hidden></div>
+      </section>
+
+      <!-- Dashboard Page -->
+      <section id="dashboard-page" class="page" hidden>
+        <header class="dash-header">
+          <h2 class="dash-title">Dashboard</h2>
+          <button id="back-btn" class="button button-outline">Analyze New File</button>
+        </header>
+
+        <section id="stats" class="stats" hidden>
+          <div class="stats-row">
+            <div class="stat-card card">
+              <div class="stat-heading" id="p1-name">Person 1</div>
+              <div class="stat-grid">
+                <div>
+                  <div class="stat-label">Messages</div>
+                  <div class="stat-value" id="p1-messages">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Characters</div>
+                  <div class="stat-value" id="p1-characters">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Avg Length</div>
+                  <div class="stat-value" id="p1-avg">0</div>
+                </div>
+              </div>
+              <div class="stat-grid stat-grid-2">
+                <div>
+                  <div class="stat-label">Sorry Count</div>
+                  <div class="stat-value" id="p1-sorry">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Active Days (%)</div>
+                  <div class="stat-value" id="p1-active">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Monthly Growth (%)</div>
+                  <div class="stat-value" id="p1-growth">0</div>
+                </div>
+              </div>
+              <div class="stat-grid stat-grid-3">
+                <div>
+                  <div class="stat-label">Media Shared</div>
+                  <div class="stat-value" id="p1-media">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Links Shared</div>
+                  <div class="stat-value" id="p1-links">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Emojis Used</div>
+                  <div class="stat-value" id="p1-emojis">0</div>
+                </div>
+              </div>
+            </div>
+            <div class="stat-card card">
+              <div class="stat-heading" id="p2-name">Person 2</div>
+              <div class="stat-grid">
+                <div>
+                  <div class="stat-label">Messages</div>
+                  <div class="stat-value" id="p2-messages">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Characters</div>
+                  <div class="stat-value" id="p2-characters">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Avg Length</div>
+                  <div class="stat-value" id="p2-avg">0</div>
+                </div>
+              </div>
+              <div class="stat-grid stat-grid-2">
+                <div>
+                  <div class="stat-label">Sorry Count</div>
+                  <div class="stat-value" id="p2-sorry">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Active Days (%)</div>
+                  <div class="stat-value" id="p2-active">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Monthly Growth (%)</div>
+                  <div class="stat-value" id="p2-growth">0</div>
+                </div>
+              </div>
+              <div class="stat-grid stat-grid-3">
+                <div>
+                  <div class="stat-label">Media Shared</div>
+                  <div class="stat-value" id="p2-media">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Links Shared</div>
+                  <div class="stat-value" id="p2-links">0</div>
+                </div>
+                <div>
+                  <div class="stat-label">Emojis Used</div>
+                  <div class="stat-value" id="p2-emojis">0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="charts" class="charts" hidden>
+          <h2 class="section-title">Graphs</h2>
+          <div class="charts-grid">
+            <div class="chart-card card" id="card-2022">
+              <div class="chart-title">2022</div>
+              <canvas id="chart-2022"></canvas>
+            </div>
+            <div class="chart-card card" id="card-2023">
+              <div class="chart-title">2023</div>
+              <canvas id="chart-2023"></canvas>
+            </div>
+            <div class="chart-card card" id="card-2024">
+              <div class="chart-title">2024</div>
+              <canvas id="chart-2024"></canvas>
+            </div>
+            <div class="chart-card card" id="card-2025">
+              <div class="chart-title">2025</div>
+              <canvas id="chart-2025"></canvas>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+  </html>
+
+
