@@ -26,3 +26,5 @@ no boring stuff. just vibes.
 pip install -r requirements.txt
 python app.py
 ```
+
+ps: coded while getting bored on bed due to illness.
