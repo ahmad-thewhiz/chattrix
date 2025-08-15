@@ -1,6 +1,10 @@
 # chattrix
 
-analyze your whatsapp chats in seconds. upload your exported chat file and get instant stats, trends, and insights. built for genz, by genz.
+analyze your whatsapp chats in seconds. upload your exported chat file and get instant stats, trends, and insights. 
+
+![main](src/images/main.jpeg)
+![d1](src/images/d1.png)
+![d2](src/images/d2.png)
 
 ## features
 - super fast chat analysis
@@ -18,7 +22,7 @@ analyze your whatsapp chats in seconds. upload your exported chat file and get i
 - javascript
 - html/css
 
-## made for genz
+## made for us
 no boring stuff. just vibes.
 
 ## run locally
